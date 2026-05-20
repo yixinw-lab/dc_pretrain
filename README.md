@@ -64,6 +64,22 @@ dclm_data_200m/dclm_train.pt
 dclm_data_200m/dclm_val.pt
 ```
 
+If you do not want to regenerate the packed data, the exact dataset snapshots
+used for these experiments are available on Hugging Face:
+
+- 100M: [`zhiwei555/dclm_data_100m`](https://huggingface.co/datasets/zhiwei555/dclm_data_100m)
+- 200M: [`zhiwei555/dclm_data_200m`](https://huggingface.co/datasets/zhiwei555/dclm_data_200m)
+- 300M: [`zhiwei555/dclm_data_300m`](https://huggingface.co/datasets/zhiwei555/dclm_data_300m)
+- 400M: [`zhiwei555/dclm_data_400m`](https://huggingface.co/datasets/zhiwei555/dclm_data_400m)
+
+For example:
+
+```bash
+huggingface-cli download zhiwei555/dclm_data_200m \
+  --repo-type dataset \
+  --local-dir dclm_data_200m
+```
+
 When overflow data is used from `mlfoundations/dclm-baseline-1.0`, `prepare_data_new.py` streams `.jsonl.zst` shards through the system `zstd` CLI, so `zstd` must be installed on the machine.
 
 ## Training
